@@ -97,9 +97,14 @@
             margin-top: 45%;
             margin-left: 47%;
             position: absolute;
-            z-index: -1;
+            z-index: 1;
             display: inline-block;
-
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            visibility: visible;
         }
 
         .dot_ten {
@@ -259,7 +264,7 @@
         <div class="grid-item">24</div>
         <div class="grid-item">25</div>
         <div class="grid-item">
-            <span class="dot_bottom"></span>
+                <span class="dot_bottom" id="gonePopUp" onclick="style.display = 'none'"></span>
         </div>
         <div class="grid-item">27</div>
         <div class="grid-item">28</div>
