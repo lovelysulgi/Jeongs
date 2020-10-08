@@ -107,6 +107,55 @@
             visibility: visible;
         }
 
+        .dot_change_color {
+            height: 15px;
+            width: 15px;
+            background-color: black;
+            border-radius: 50%;
+            margin-top: 45%;
+            margin-left: 47%;
+            position: absolute;
+            z-index: 1;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            visibility: visible;
+        }
+
+        .dot_spring {
+            height: 15px;
+            width: 15px;
+            background-color: black;
+            border-radius: 50%;
+            margin-top: 45%;
+            margin-left: 47%;
+            position: absolute;
+            z-index: 1;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            visibility: visible;
+        }
+
+        .spring .show {
+            visibility: visible;
+            -webkit-animation: fadeOut 10s;
+            animation: fadeOut  10s;
+        }
+
+        .color_change .show {
+            visibility: visible;
+            background-color: red;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
         .dot_ten {
             height: 15px;
             width: 15px;
@@ -173,6 +222,26 @@
 
             to {
                 opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
             }
         }
 
@@ -253,7 +322,19 @@
 
         </div>
         <div class="grid-item">
-            <span class="dot_bottom"></span>
+
+            <div class="color_change" onclick="changeColor()">
+                <span class="dot_change_color" id="colorPopup"></span>
+            </div>
+
+            <script>
+                function changeColor()
+                {
+                    var color_change = document.getElementById("colorPopup");
+                    color_change.classList.toggle("show");
+                }
+            </script>
+
         </div>
         <div class="grid-item">
         </div>
@@ -270,7 +351,19 @@
         <div class="grid-item">28</div>
         <div class="grid-item">29</div>
         <div class="grid-item">
-            <span class="dot_bottom"></span>
+            <div class="spring" onclick="spring()">  
+                <span class="dot_spring" id="springPopup"></span>
+            </div>
+
+            <script>
+                function spring()
+                {
+                    console.log("loading");
+                    var spring = document.getElementById("springPopup");
+                    spring.classList.toggle("show");
+                }
+            </script>
+
         </div>
         <div class="grid-item">31</div>
         <div class="grid-item">32</div>
