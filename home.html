@@ -177,9 +177,13 @@
             margin-top: 45%;
             margin-left: 47%;
             position: absolute;
-            z-index: -1;
+            z-index: 1;
             display: inline-block;
-
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         /* The actual popup */
@@ -285,14 +289,12 @@
             <div class="black_change" onclick="black()">
                 <span class="dot_all_black" id="black_id"></span>
             </div>
-
             <script>
                 function black() {
                     var dot_black = document.getElementById("black_id");
                     dot_black.classList.toggle("show");
                 }
             </script>
-
         </div>
         <div class="grid-item"></div>
         <div class="grid-item"></div>
@@ -304,7 +306,27 @@
         <div class="grid-item">8</div>
         <div class="grid-item"></div>
         <div class="grid-item">
-            <span class="dot_ten"></span>
+            
+                <span class="dot_ten"  onclick="loading()"></span>
+
+                <div class="loading" id="loading" style="visibility: hidden; position:absolute">
+                    <h1>loading text</h1>    
+            </div>
+  
+            <script>
+                function loading() {
+                    console.log("loading text");
+                    var loading = document.getElementById("loading");
+                    console.log(loading.style);
+                    if (loading.style.visibility === 'hidden') {
+                        console.log("change style");
+                        loading.style.cssText = "visibility:visible; position:absolute ";
+  } else {
+    loading.style.visibility = "hidden";
+  }
+                }
+            </script>
+            
         </div>
         <div class="grid-item">11</div>
         <div class="grid-item">12</div>
